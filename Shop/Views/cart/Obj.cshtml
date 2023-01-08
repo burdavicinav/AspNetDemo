@@ -1,0 +1,25 @@
+﻿@model Cart
+
+@{
+    Layout = "_Layout";
+}
+
+<div class="row mt-5 mb-2">
+    @{
+        <h2>Cart @Model.Id</h2>
+
+        if (Model.Items != null)
+        {
+            foreach (CartItem item in Model.Items)
+            {
+                <div class="alert alert-warning mt-3">
+                        <b>@item.Car.Name</b>
+                        <b>@item.Price.ToString("c")</b>
+                        <b>@item.Qty</b>
+                </div>
+            }
+        }
+    }
+    <hr />
+    <div class="btn btn-danger" asp-controller="Order">Оплатить</div>
+</div>

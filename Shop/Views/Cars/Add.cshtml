@@ -1,0 +1,19 @@
+﻿@model IEnumerable<Car>
+
+@{
+    Layout = "_Layout";
+}
+
+<h2> @ViewBag.Title </h2>
+<div class="row mt-5 mb-2">
+    @{
+        foreach (var obj in Model)
+        {
+            <div class="col-lg-4">
+                <h2>@obj.Name</h2>
+                <p>@obj.LongDescription</p>
+                <p>@obj.Price.ToString("c")</p>
+            </div>
+        }
+    }
+</div>

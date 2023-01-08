@@ -1,0 +1,15 @@
+﻿@model IEnumerable<Car>
+
+@{
+    Layout = "_Layout";
+}
+
+<h2> @ViewBag.Title </h2>
+<div class="row mt-5 mb-2">
+@{
+    foreach (Car car in Model)
+    {
+        @Html.Partial("AllCars", car)
+    }
+}
+</div>
